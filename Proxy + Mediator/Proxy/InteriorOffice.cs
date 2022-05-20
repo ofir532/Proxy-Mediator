@@ -18,8 +18,9 @@ namespace Proxy___Mediator.Proxy
 
         public void CreatePassport(Person person)
         {
-            person.passport.PassportId = $"IL{person.PersonId}";
-            person.passport.ExpirationDate = DateTime.Now.AddYears(2);
+            person.PassPort = new Passport();
+            person.PassPort.PassportId = $"IL{person.PersonId}";
+            person.PassPort.ExpirationDate = DateTime.Now.AddYears(2);
         }
 
     }

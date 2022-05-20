@@ -22,7 +22,7 @@ namespace Proxy___Mediator.Proxy
         }
         public void PassportRenewal(Person person)
         {
-            person.passport.ExpirationDate.AddYears(5);
+            person.PassPort.ExpirationDate.AddYears(5);
         }
 
     }

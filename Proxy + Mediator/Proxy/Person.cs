@@ -15,7 +15,7 @@ namespace Proxy___Mediator.Proxy
         public string LastName { get; set; }
         public string Address { get; set; }
         public int Age { get; set; }
-        public Passport passport { get; }
+        public Passport PassPort { get; set; }
 
         public Person(int personId, string firstName, string lastName, string address, int age)
         {
@@ -24,7 +24,6 @@ namespace Proxy___Mediator.Proxy
             LastName = lastName;
             Address = address;
             Age = age;
-            passport = new Passport();
         }
 
         public static Person GeneratePerson()
@@ -37,8 +36,8 @@ namespace Proxy___Mediator.Proxy
             int personId = rnd.Next(100000000, 999999999);
             string firstName = firstName_bank[rnd.Next(0, firstName_bank.Length - 1)];
             string lastName = lastNames_bank[rnd.Next(0, lastNames_bank.Length - 1)];
-            int age = rnd.Next(121);
             string address = $"{streets_bank[rnd.Next(0, streets_bank.Length - 1)]} {rnd.Next(1, 199)}, {cities_bank[rnd.Next(0, cities_bank.Length - 1)]}";
+            int age = rnd.Next(121);
             Person p1 = new Person(personId, firstName, lastName, address, age);
             return p1;
         }
