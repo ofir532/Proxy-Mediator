@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Proxy___Mediator.Proxy
@@ -14,8 +15,7 @@ namespace Proxy___Mediator.Proxy
         public string LastName { get; set; }
         public string Address { get; set; }
         public int Age { get; set; }
-
-        public Passport passport = new Passport();
+        public Passport passport { get; }
 
         public Person(int personId, string firstName, string lastName, string address, int age)
         {
@@ -24,6 +24,7 @@ namespace Proxy___Mediator.Proxy
             LastName = lastName;
             Address = address;
             Age = age;
+            passport = new Passport();
         }
 
         public static Person GeneratePerson()
@@ -44,9 +45,12 @@ namespace Proxy___Mediator.Proxy
 
         public override string ToString()
         {
+            //var options = new JsonSerializerOptions { WriteIndented = true };
+            //options.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+            //return JsonSerializer.Serialize(this, options);
             var options = new JsonSerializerOptions { WriteIndented = true };
-            options.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
             return JsonSerializer.Serialize(this, options);
+
         }
 
     }
