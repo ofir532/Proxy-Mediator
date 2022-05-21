@@ -22,7 +22,9 @@ namespace Proxy___Mediator.Proxy
         }
         public void PassportRenewal(Person person)
         {
-            person.PassPort.ExpirationDate.AddYears(5);
+            if (person.PersonId == null)
+                return;
+            person.PassPort.ExpirationDate = person.PassPort.ExpirationDate.AddYears(10);
         }
 
     }

@@ -6,8 +6,4 @@
     <RootNamespace>Proxy___Mediator</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Mediator\" />
-  </ItemGroup>
-
 </Project>
